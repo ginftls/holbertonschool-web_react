@@ -41,3 +41,19 @@ const teacher2: Teacher = {
 
 console.log('Teacher 1:', teacher1);
 console.log('Teacher 2:', teacher2);
+
+// Define the Directors interface that extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+// Create director object
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+console.log(director1);
