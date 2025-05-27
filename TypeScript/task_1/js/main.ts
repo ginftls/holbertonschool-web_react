@@ -57,3 +57,38 @@ const director1: Directors = {
 };
 
 console.log(director1);
+
+// Interface for the StudentClass constructor
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Interface for the StudentClass
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// StudentClass implementation
+class StudentClass implements StudentClassInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+// Example usage of StudentClass
+const student: StudentClass = new StudentClass('John', 'Doe');
+console.log('Student display name:', student.displayName());
+console.log('Student homework status:', student.workOnHomework());
