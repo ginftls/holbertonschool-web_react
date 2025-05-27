@@ -87,3 +87,19 @@ function executeWork(employee: Director | Teacher): string {
 // Test the executeWork function
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+
+// String literal type for Subjects
+type Subjects = 'Math' | 'History';
+
+// Function to teach class based on subject
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else {
+    return 'Teaching History';
+  }
+}
+
+// Test the teachClass function
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
