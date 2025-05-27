@@ -69,3 +69,21 @@ console.log('Employee 2 coffee break:', employee2.getCoffeeBreak());
 
 console.log('Employee 3 work from home:', employee3.workFromHome());
 console.log('Employee 3 coffee break:', employee3.getCoffeeBreak());
+
+// Type predicate function to check if employee is a Director
+function isDirector(employee: Director | Teacher): employee is Director {
+  return (employee as Director).workDirectorTasks !== undefined;
+}
+
+// Function to execute work based on employee type
+function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  } else {
+    return employee.workTeacherTasks();
+  }
+}
+
+// Test the executeWork function
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
