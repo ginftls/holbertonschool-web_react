@@ -8,7 +8,9 @@ export function deleteRow(rowId) {
   return;
 }
 
-export function updateRow(rowId, row) {
+export function updateRow(rowId,
+   row) {
   console.log(`Update row ${rowId}`, row);
   return rowId;
 }
+TypeScript/task_4
